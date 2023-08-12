@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.testcontainers.containers.MariaDBContainer;
 import org.testcontainers.utility.DockerImageName;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -17,6 +18,7 @@ public class TestContainerUseCaseIT {
     @BeforeAll
     public static void initializeDabase() {
         db = new MariaDBContainer<>(DockerImageName.parse("mariadb:10.5.8"));
+        db.setPortBindings(Collections.singletonList("3307:3306"));
         db.start();
     }
     @AfterAll
