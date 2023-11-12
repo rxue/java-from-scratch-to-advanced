@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestContainerUseCaseIT {
+public class UseCaseWithTestContainerIT {
     private static MariaDBContainer<?> db;
     @BeforeAll
     public static void initializeDabase() {
