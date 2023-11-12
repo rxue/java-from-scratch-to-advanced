@@ -30,6 +30,7 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>mariadb</artifactId>
             <version>1.18.3</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -45,24 +46,10 @@
                         <goals>
                             <goal>integration-test</goal>
                         </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
                         <configuration>
-                            <mainClass>rx.it.Database</mainClass>
-                            <arguments>
-                                <argument>start</argument>
-                            </arguments>
+                            <includes>
+                                <include>**/*IT.java</include>
+                            </includes>
                         </configuration>
                     </execution>
                 </executions>
