@@ -59,8 +59,11 @@
                 <version>3.1.2</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <x>test</x>
+                        <x>test2152</x>
                     </systemPropertyVariables>
+                    <environmentVariables>
+                        <y>test</y>
+                    </environmentVariables>
                 </configuration>
                 <executions>
                     <execution>
