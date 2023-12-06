@@ -70,6 +70,11 @@
                         <goals>
                             <goal>integration-test</goal>
                         </goals>
+                        <configuration>
+                            <environmentVariables>
+                                <z>test</z>
+                            </environmentVariables>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

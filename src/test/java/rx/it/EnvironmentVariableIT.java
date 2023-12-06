@@ -9,4 +9,9 @@ public class EnvironmentVariableIT {
     public void testEnvrionmentVariable() {
         assertEquals("test", System.getenv("y"));
     }
+
+    @Test
+    public void testEnvrionmentVariableInExecution() {
+        assertEquals("test", System.getenv("z"));
+    }
 }
