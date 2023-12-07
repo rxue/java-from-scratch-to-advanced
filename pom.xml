@@ -59,10 +59,11 @@
                 <version>3.1.2</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <x>test2152</x>
+                        <propertyInFailSafe>test2152</propertyInFailSafe>
+                        <propertyInFailSafe2>test12070753</propertyInFailSafe2>
                     </systemPropertyVariables>
                     <environmentVariables>
-                        <y>test</y>
+                        <environmentVar>test</environmentVar>
                     </environmentVariables>
                 </configuration>
                 <executions>
@@ -71,8 +72,11 @@
                             <goal>integration-test</goal>
                         </goals>
                         <configuration>
+                            <systemPropertyVariables>
+                                <propertyInFailSafeITExecution>test12070745</propertyInFailSafeITExecution>
+                            </systemPropertyVariables>
                             <environmentVariables>
-                                <z>test</z>
+                                <environmentVarInFailSafeITExecution>test</environmentVarInFailSafeITExecution>
                             </environmentVariables>
                         </configuration>
                     </execution>
