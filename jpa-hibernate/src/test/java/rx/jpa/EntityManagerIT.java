@@ -35,7 +35,7 @@ public class EntityManagerIT {
             account2.setName("test2");
             assertEquals(0, account2.getId());
             em.persist(account2);
-            assertEquals(1, account2.getId());
+            assertEquals(2, account2.getId());
         }
     }
     @AfterAll

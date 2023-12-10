@@ -1,19 +1,18 @@
 package rx.jpa;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+
 
 @Entity
 public class Account {
 
-    @Id
-    private Long id;
+    private long id;
     private String name;
 
     @SequenceGenerator(name="account_sequence_generator", sequenceName = "account_seq")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "account_sequence_generator")
-    public Long getId() {
+    @Id
+    public long getId() {
         return id;
     }
 
