@@ -2,6 +2,8 @@ package rx.jpa;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 
 @Entity
 public class Account {
@@ -27,4 +29,12 @@ public class Account {
     public void setName(String name) {
         this.name = name;
     }
+    /*@Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Account) {
+            Account that = (Account) obj;
+            return Objects.equals(id, that.getId());
+        }
+        return false;
+    }*/
 }

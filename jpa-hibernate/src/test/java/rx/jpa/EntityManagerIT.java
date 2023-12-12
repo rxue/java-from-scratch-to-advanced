@@ -81,6 +81,7 @@ public class EntityManagerIT {
             account2.setName("test2");
             assertEquals(null, account2.getId());
             em.persist(account2);
+            assertEquals(2L, account2.getId());
             transaction.commit();
         }
     }
