@@ -1,4 +1,4 @@
-package rx.book.javapersistencewithhibernate1revised.ch9;
+package rx.jpa.book.javapersistencewithhibernate1revised.ch9;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

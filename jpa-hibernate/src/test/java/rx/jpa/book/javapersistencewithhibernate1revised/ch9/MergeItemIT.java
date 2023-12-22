@@ -1,9 +1,10 @@
-package rx.book.javapersistencewithhibernate1revised.ch9;
+package rx.jpa.book.javapersistencewithhibernate1revised.ch9;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import org.junit.jupiter.api.Test;
 import rx.AbstractITConfigTemplate;
+import rx.jpa.book.javapersistencewithhibernate1revised.ch9.Item;
 
 import static org.junit.jupiter.api.Assertions.*;
 
