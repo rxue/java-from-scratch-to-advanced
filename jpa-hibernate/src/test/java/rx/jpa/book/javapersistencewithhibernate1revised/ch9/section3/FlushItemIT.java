@@ -26,18 +26,47 @@ public class FlushItemIT extends AbstractITConfigTemplate {
             em.persist(item);
             assertNotNull(item.getId());
             em.flush();
-            databaseIdentity = getIdInAnotherReadUncommittedSession();
+            databaseIdentity = getIdInAnotherReadUncommitedSession();
             assertNotNull(databaseIdentity);
             databaseIdentity = item.getId();
             transaction.commit();
         }
+
+        assertAfterCommitInAnotherPersistenceContext(databaseIdentity);
+
+    }
+
+    @Test
+    public void persist_thenNoFlush() {
+        //Arrange
+        Item item;
+        Long databaseIdentity;
+        try (EntityManager em = entityManagerFactory.createEntityManager()) {
+            assertSame(FlushModeType.AUTO, em.getFlushMode());
+            EntityTransaction transaction = em.getTransaction();
+            transaction.begin();
+            item = new Item();
+            item.setDescription("original desc");
+            em.persist(item);
+            assertNotNull(item.getId());
+            databaseIdentity = getIdInAnotherReadUncommitedSession();
+            assertNull(databaseIdentity);
+            databaseIdentity = item.getId();
+            transaction.commit();
+        }
+
+        assertAfterCommitInAnotherPersistenceContext(databaseIdentity);
+
+    }
+
+    private void assertAfterCommitInAnotherPersistenceContext(Long databaseIdentity) {
         try (EntityManager em = entityManagerFactory.createEntityManager()) {
             Item foundItem = em.find(Item.class, databaseIdentity);
             assertNotNull(foundItem);
         }
-
     }
-    private Long getIdInAnotherReadUncommittedSession() {
+
+    private Long getIdInAnotherReadUncommitedSession() {
         try(Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3307/test", "root", "test")) {
             conn.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
             Statement stmt = conn.createStatement();
