@@ -12,6 +12,21 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AddAccountsInIT extends AbstractITConfigTemplate {
 
     @Test
+    public void persistAccountWithRandomId() {
+        final Long randomId = 5001L;
+        Account account = new Account();
+        account.setId(randomId);
+        account.setName("test");
+        try (EntityManager em = entityManagerFactory.createEntityManager()) {
+            EntityTransaction transaction = em.getTransaction();
+            transaction.begin();
+            em.persist(account);
+            transaction.commit();
+        }
+        assertNotEquals(randomId, account.getId());
+    }
+
+    @Test
     public void addAccountWithRandomId() {
         Account detachedAccount;
         Account mergedAccount;
