@@ -4,7 +4,7 @@
 
     <groupId>rx</groupId>
     <artifactId>advanced</artifactId>
-    <version>3.0</version>
+    <version>4.0-SNAPSHOT</version>
 
     <scm>
         <developerConnection>scm:git:https://github.com/rxue/java-from-scratch-to-advanced.git</developerConnection>
@@ -14,7 +14,6 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <junit.platform.version>5.10.0</junit.platform.version>
-        <revision>3.0-SNAPSHOT</revision>
     </properties>
     <!-- Reference: https://junit.org/junit5/docs/current/user-guide/#running-tests-build-maven -->
     <dependencyManagement>
