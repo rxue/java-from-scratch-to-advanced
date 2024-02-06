@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>rx</groupId>
     <artifactId>advanced</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0-SNAPSHOT</version>
 
     <scm>
         <developerConnection>scm:git:https://github.com/rxue/java-from-scratch-to-advanced.git</developerConnection>
-    </scm>
+      <tag>HEAD</tag>
+  </scm>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <junit.platform.version>5.10.0</junit.platform.version>
+        <!--revision>2.0-SNAPSHOT</revision-->
     </properties>
     <!-- Reference: https://junit.org/junit5/docs/current/user-guide/#running-tests-build-maven -->
     <dependencyManagement>
@@ -91,8 +91,9 @@
                 <version>3.0.1</version>
                 <configuration>
                     <goal>deploy</goal>
-                    <tagBase>https://github.com/rxue/java-from-scratch-to-advanced</tagBase>
+                    <!--tagBase>https://github.com/rxue/java-from-scratch-to-advanced</tagBase-->
                     <tagNameFormat>@{project.version}</tagNameFormat>
+                    <arguments>-DskiptTests</arguments>
                 </configuration>
             </plugin>
         </plugins>
