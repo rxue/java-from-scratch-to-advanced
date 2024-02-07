@@ -8,7 +8,6 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/rxue/java-from-scratch-to-advanced.git</developerConnection>
-        <tag>100</tag>
   </scm>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
