@@ -1,16 +1,10 @@
 name: Release Maven Project
 
 on:
-  workflow_dispatch:
-    inputs:
-      releaseVersion:
-        description: 'Release version'
-        required: true
-        default: "1.0"
-      developmentVersion:
-        description: 'Next development version'
-        required: true
-        default: "1.1-SNAPSHOT"
+  push:
+    branches:
+      - main
+
 
 jobs:
   release:
@@ -32,8 +26,7 @@ jobs:
         git config --global user.name "Your Name"
 
     - name: Release
-      run: mvn release:prepare -B -X \ 
-           -DreleaseVersion=${{ github.event.inputs.releaseVersion }} -DdevelopmentVersion=${{ github.event.inputs.developmentVersion }}
+      run: mvn release:prepare -B -X 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
