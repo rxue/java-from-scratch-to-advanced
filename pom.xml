@@ -8,7 +8,8 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/rxue/java-from-scratch-to-advanced.git</developerConnection>
-      <tag>HEAD</tag>
+        <tag>HEAD</tag>
+        <!-- HEAD tag is probably needed -->
   </scm>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
