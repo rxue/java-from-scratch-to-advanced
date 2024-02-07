@@ -30,8 +30,8 @@ jobs:
         git config --global user.name "Your Name"
 
     - name: Release
-      run: mvn release:prepare -B -X 
-        releasVersion=1.0 developmentVersion=1.1 \
+      run: mvn release:prepare -B -X \ 
+        releasVersion=1.0 developmentVersion=1.1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
