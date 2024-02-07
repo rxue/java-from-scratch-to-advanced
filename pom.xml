@@ -4,11 +4,11 @@
 
     <groupId>rx</groupId>
     <artifactId>advanced</artifactId>
-    <version>10.2</version>
+    <version>1.1-SNAPSHOT</version>
 
     <scm>
         <developerConnection>scm:git:https://github.com/rxue/java-from-scratch-to-advanced.git</developerConnection>
-      <tag>10.2</tag>
+      <tag>3.0</tag>
   </scm>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
