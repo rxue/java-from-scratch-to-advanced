@@ -31,7 +31,7 @@ jobs:
 
     - name: Release
       run: mvn release:prepare -B -X \ 
-          -DreleaseVersion=1.0 -DdevelopmentVersion=1.1
+          -DreleaseVersion=1.0 -DdevelopmentVersion=1.1-SNAPSHOT
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
