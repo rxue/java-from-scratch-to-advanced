@@ -3,13 +3,13 @@ package rx.jpa;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import org.junit.jupiter.api.Test;
-import rx.AbstractITConfigTemplate;
+import rx.AbstractITConfigTemplateWithEntityManagerFactory;
 
 import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class AddAccountsInIT extends AbstractITConfigTemplate {
+public class AddAccountsInITWithEntityManagerFactory extends AbstractITConfigTemplateWithEntityManagerFactory {
 
     @Test
     public void persistAccountWithRandomId() {

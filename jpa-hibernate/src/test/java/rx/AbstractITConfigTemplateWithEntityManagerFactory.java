@@ -9,7 +9,8 @@ import org.testcontainers.utility.DockerImageName;
 
 import java.util.Collections;
 
-public abstract class AbstractITConfigTemplate {
+public abstract class AbstractITConfigTemplateWithEntityManagerFactory {
+    protected EntityManagerFactory entityManagerFactory;
     private MariaDBContainer<?> db;
 
     @BeforeEach
@@ -17,10 +18,12 @@ public abstract class AbstractITConfigTemplate {
         db = new MariaDBContainer<>(DockerImageName.parse("mariadb:10.5.8"));
         db.setPortBindings(Collections.singletonList("3307:3306"));
         db.start();
+        entityManagerFactory = Persistence.createEntityManagerFactory("test-mariadb");
     }
 
     @AfterEach
     public void destroy() {
+        entityManagerFactory.close();
         db.stop();
     }
 }

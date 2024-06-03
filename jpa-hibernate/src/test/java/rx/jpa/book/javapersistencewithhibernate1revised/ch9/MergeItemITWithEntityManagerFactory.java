@@ -3,12 +3,11 @@ package rx.jpa.book.javapersistencewithhibernate1revised.ch9;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import org.junit.jupiter.api.Test;
-import rx.AbstractITConfigTemplate;
-import rx.jpa.book.javapersistencewithhibernate1revised.ch9.Item;
+import rx.AbstractITConfigTemplateWithEntityManagerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MergeItemIT extends AbstractITConfigTemplate {
+public class MergeItemITWithEntityManagerFactory extends AbstractITConfigTemplateWithEntityManagerFactory {
     @Test
     public void merge_itemExisted() {
         //Arrange

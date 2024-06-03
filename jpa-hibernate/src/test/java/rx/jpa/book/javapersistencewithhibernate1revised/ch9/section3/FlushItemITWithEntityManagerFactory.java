@@ -4,14 +4,14 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.FlushModeType;
 import org.junit.jupiter.api.Test;
-import rx.AbstractITConfigTemplate;
+import rx.AbstractITConfigTemplateWithEntityManagerFactory;
 import rx.jpa.book.javapersistencewithhibernate1revised.ch9.Item;
 
 import java.sql.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FlushItemIT extends AbstractITConfigTemplate {
+public class FlushItemITWithEntityManagerFactory extends AbstractITConfigTemplateWithEntityManagerFactory {
     @Test
     public void persist_thenFlush() {
         //Arrange
