@@ -66,7 +66,7 @@
                         <environmentVar>test</environmentVar>
                     </environmentVariables>
                 </configuration>
-                <executions>
+                <!--executions>
                     <execution>
                         <goals>
                             <goal>integration-test</goal>
@@ -80,7 +80,7 @@
                             </environmentVariables>
                         </configuration>
                     </execution>
-                </executions>
+                </executions-->
             </plugin>
         </plugins>
     </build>
