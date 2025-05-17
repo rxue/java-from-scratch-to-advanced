@@ -12,7 +12,7 @@
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="jakarta.persistence.schema-generation.database.action" value="create" />
             <property name="jakarta.persistence.sql-load-script-source" value="import_mariadb.sql" />
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.hbm2ddl.charset_name" value="UTF-8" />
         </properties>
